@@ -4,6 +4,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
 module.exports = {
+	mode: 'development',
+    devtool: 'eval-source-map',
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist/assets'),
@@ -66,7 +68,7 @@ module.exports = {
 
 				// globOptions: {
 				// 	dot: true,
-				// 	gitignore: true, // this will ignore the gitignored files and won't copy it in build folder (bundle.js in dist)
+				// 	gitignore: true, // this will ignore the gitignored files
 				// 	ignore: ["**/file.*", "**/ignored-directory/**"],
 				// },
 				to: path.resolve(__dirname, 'build')
